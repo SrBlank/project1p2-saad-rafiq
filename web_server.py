@@ -129,16 +129,5 @@ def index():
         movie_review_data = movie_review_data_formatted
         )
 
-@app.route("/welcome")
-def welcome():
-    movie_review_data_raw = Review.query.filter_by(movie_id=185).all()
-    movie_review_data_formatted = []
-    for i in range(len(movie_review_data_raw)):
-        movie_review_data_formatted.append(str(movie_review_data_raw[i]).split(','))
-    topics = ['1','2','3','4']
-    return flask.render_template('welcome.html',
-    movie_review_data = movie_review_data_formatted
-    )
-
 if __name__=="__main__":
     app.run()

@@ -1,5 +1,5 @@
 # project1-saad-rafiq
-[Click Here to Check Out the Website!](https://saadsmovies.fly.dev/)
+[Click Here to Check Out the Website!](https://movieprojsaad.fly.dev/)
 
 ## Software Stack
 #### The website is composed of the following software:
@@ -86,11 +86,11 @@ We can then check status by doing `flyctl status` which should look something li
 
 ```
 App
-  Name     = saadsmovies
+  Name     = movieprojsaad
   Owner    = personal
   Version  = 1
   Status   = running
-  Hostname = saadsmovies.fly.dev
+  Hostname = movieprojsaad.fly.dev
   Platform = nomad
 
 Deployment Status
@@ -101,7 +101,7 @@ Deployment Status
   Instances   = 1 desired, 1 placed, 1 healthy, 0 unhealthy
 ...
 ```
-We are concerned with the `Hostname` which is the link to the website that is now deployed, [saadsmovies.fly.dev](https://saadsmovies.fly.dev/). We are also considered with `Status` and `Description` which should say successful.
+We are concerned with the `Hostname` which is the link to the website that is now deployed, [saadsmovies.fly.dev](https://movieprojsaad.fly.dev/). We are also considered with `Status` and `Description` which should say successful.
 
 ## Challenges and Problems
 ### Implementaion Issues

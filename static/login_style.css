@@ -1,0 +1,17 @@
+body {
+    margin: 20px;
+    background: #000000 url("./img/stars.jpg") top left repeat;
+    color: rgb(255, 255, 255);
+}
+
+#login_form {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}

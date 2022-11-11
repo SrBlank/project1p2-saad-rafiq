@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+<html>
+  <head>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='login_style.css')}}">
+    <title>Login</title>
+  </head>
+  <body>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages  %}
+        {% for message in messages  %}
+            <b>{{message}}</b>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <div class="container">
+      <div>
+      <h1>Log In</h1>
+        <form id="login_form" method='POST' action="/login/processing_log_in">
+            <label>Username </label>
+            <input type="text" id="userID" name="user_id"/>
+            <input type="submit" value="Submit"/>
+        </form>
+        <h3><a href="{{ url_for('sign_up_page') }}">Sign up here!</a></h3>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!-- templates/index.html -->
+<html>
+  <head>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='main.css')}}">
+    <title>{{html_movie_original_title}}</title>
+  </head>
+  <body>
+
+    <div id="image">
+      <img src="{{html_movie_built_poster_url}}" alt="null">
+    </div>
+
+    <div class="header">
+      <div class="header_content">
+        <h1>{{html_movie_original_title}}</h1>
+        <h2> {{html_movie_tagline}} </h2>
+      </div>
+    </div>
+
+    <div class="body_container">
+      <div class="center">
+        <h2 style="text-align:left;"> {{html_movie_desc}} </h2>
+        <form method="POST" action="/movies/handle_submission" >
+          <label id="ratingID">Rating: </label>
+          <select name="rating" id="rating-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+          </select>
+          <label id="reviewIDLabel">Leave a Review:</label>
+          <textarea id="reviewID" name="review" rows="5" cols="33" placeholder="Enter Text"></textarea>
+          <input id="submitbutton" type="submit" value="Submit"/>
+        </form>
+        <div class="scrollbox">
+          {% if movie_review_data %}
+            {% for review in movie_review_data %}
+              <p style="margin:0; padding:0;text-align: center;"><b>{{ review[0] }}</b>-{{ review[3] }}</p>
+              <p style="margin:0;text-align: center;"><b>Rating: </b>{{ review[1] }}/5</p>
+              <p style="margin-top:0;text-align: center;"><b>Review: </b>{{ review[2] }}</p>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <h3> Movie Genres: {{html_movie_genres}}  </h3>
+      <a href={{html_movie_wiki_link}} >Wiki Page for {{html_movie_original_title}}</a>
+      <form methods="POST" action="/movies/logout">
+        <input class="logout" type="submit" value="Logout"/>
+      </form>
+    </div>
+  </body>
+</html>
+

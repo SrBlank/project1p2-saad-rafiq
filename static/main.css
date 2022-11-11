@@ -1,0 +1,119 @@
+body {
+    background: #000000 url("./img/stars.jpg") top left repeat;
+    color: rgb(255, 255, 255);
+}
+
+#image {
+    float: right;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ccc;
+}
+
+#body h1 {
+    font-size: 25px;
+}
+
+#bottom {
+    text-align: center;
+    position: relative;    
+    color: black;
+}
+
+/* 
+CSS for Footer
+Handles movie genres, wikipedia link
+*/
+
+#footer {
+    text-align: right;
+    position: relative;    
+    float:right;
+    bottom: 0;
+}
+
+#footer a {
+    font-size: 19px;
+}
+
+#logout {
+    text-align: right;
+    position: relative;
+    float:left;
+    margin: 0 auto;
+}
+
+/* 
+CSS for Header
+Handles movie title, movie line
+*/
+
+.header {
+    height: 100px;
+    width: 730px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.header_content {
+    position: relative;
+    text-align:center;
+}
+
+/* 
+CSS for Middle Text Section
+Handles description, rating, review,
+        submit, and text area formatting
+*/
+.body_container {
+    height: 680px;
+    width: 730px;
+    position: relative;
+    margin-left:10px;
+}
+
+.center {
+    margin: 0 auto;
+    position: absolute;
+    text-align:center;
+}
+
+.scrollbox {
+    height:300px;
+    width:500px;
+    overflow: auto;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+textarea {
+    padding:10px;
+    max-width:100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+
+#submitbutton {
+    display: block;
+    text-align: center;
+    margin:0 auto;
+    margin-top: 10px;
+}
+
+#reviewId {
+    height: 100px;
+}
+
+#ratingID {
+    width: 30px;
+}
+
+#reviewIDLabel {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

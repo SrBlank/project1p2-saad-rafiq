@@ -1,0 +1,19 @@
+<!-- templates/index.html -->
+<html>
+  <head>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='login_style.css')}}">
+    <title>Welcome</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1>Sign up for SaadsMovies.fly.dev</h1>
+        <form id="login_form" method="POST" action="/signup/processing_sign_in">
+            <label>Enter a Username </label>
+            <input type="text" id="user_ID" name="user_id"/>
+            <input type="submit" value="Submit"/>
+        </form>
+        <h3><a href="{{ url_for('login_page') }}">Already have an Account? Return to Login</a></h3>
+    </div>
+  </body>
+</html>

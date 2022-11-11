@@ -53,6 +53,13 @@ TMDB_API_KEY={KEY}
 
 Replace the `{KEY}` with your API key. Fortunately, the WikiMedia API does not require to create an account or request a key so there will be no modification necessary for that.
 
+### Edit Database URI
+Create a postgres cluster following the directions on this [github repo](https://github.com/laithhas/ip-milestone-2-demo). In the process of creation you will get a Database URI link. Save this link and put in your `.env` like so:
+
+```
+DATABASE_URL=
+```
+
 ### Deploying to Fly
 Naviate to [fly.io](https://fly.io/) and create an account. Then in WSL run the following commands:
 
@@ -97,9 +104,13 @@ Deployment Status
 We are concerned with the `Hostname` which is the link to the website that is now deployed, [saadsmovies.fly.dev](https://saadsmovies.fly.dev/). We are also considered with `Status` and `Description` which should say successful.
 
 ## Challenges and Problems
-### Technical Challenges
-1. A technical challenge I came across was the WikiMedia API. The API documenation I felt was difficult to understand but once implemented I realized that a search more than likely results in multiple Wikipedia articles. To overcome this I used a `for loop` to iterate through the recieved array searching for the word `film`. In the case that it can not find it it will default to the first index of the array. This isn't a perfect solution however, I feel that this solution gets the job done efficently and works for the movies I have hardcoded in. 
-2. The second challenge I came across was deploying to fly. I wanted to update my code so I can use the `tile.png` image however fly would not let me deploy. It kept on getting stuck on `Building Image` and would sit there forever. I restarted WSL, my computer, reinsntalled fly, tried a hardwired connection, and a bunch of other random poossible solutions. I finally ended up finding `flyctl doctor` which checked if everything was working as it should and found that my `agent` and `wireguard` had to be reset. 
-### Known Problems
-1. There are no default values so in the case where a Wiki article doesnt exist (which I did find) my array would fall out of index. 
-2. I think my HTML and CSS could have been better. I believe it does not transfer to monitors that are not 1920x1080 very well and the formatting in general could have just been better. I found HTML and CSS very difficult to work with especically regarding alignment. 
+### Implementaion Issues
+1. I had trouble implementing a lot of the HTML ideas I had. I found HTML and CSS challenging to work with as it seemed like there are 10 different ways to approach the same problem. Becuase of this issue I sat down one day and really tried to figure things out and I came up with a methadology to coding in html. The methadology was to have `div` container then another `div` for the contents. This allowed me to seperate my code into header, footer, body, and image containers making formatting a lot easier.
+2. The second implementation issue I had was how URL scheming was going to be. I feel like most websites I go to have a URL scheme that makes sense however I was uncertain on if and how to organize. I ended up settling for a scheme that makes sense to me as when a user is in `/movie` and submits a review the submission is `/movie/handle_submission`.
+### Technical Issues
+1. A technical issue I had was connecting the database locally then later on fly. This was a huge issue for me as I was not able to make a lot of progress without the database. Therefore I spent most of my time working on the database and issues I had with it. The biggest issue I had was finding the right database URI since for some reason fly would give me several URIs and I was not sure which to use. I ended up finally setting the right secrets and the variables to get my database to work.
+2. The second issue I had was using flask_login. I felt that documentation wasnt the greatest and there was a lot going on as far as user authentication and logging in/out goes. I am specifically talking about the `.is_authenticated` function as I didnt quite understand how to use it. After looking at enough examples however I got the correct implementation of the library. 
+
+
+##
+NOTE: MY COMMITS ARE ALL ON project1-saad-rafiq REPOSITORY AS I WAS NOT CERTAIN ABOUT IF WE NEEDED TO USE THE SAME URL FOR THE PROJECT OR NOT. PLEASE VIST THIS LINK TO VIEW MY COMMIT HISTORY https://github.com/SrBlank/project1-saad-rafiq
